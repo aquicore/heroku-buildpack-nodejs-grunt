@@ -21,22 +21,10 @@ Or add this buildpack to your current app:
 
     heroku config:add BUILDPACK_URL=https://github.com/mbuchetics/heroku-buildpack-nodejs-grunt.git
 
-Add the sneaky option to enable config vars during compile:
-
-    heroku labs:enable user-env-compile -a myapp
-
-Set the `NODE_ENV` environment variable (e.g. `development` or `production`):
-
-    heroku config:set NODE_ENV=production
-
 Create your Node.js app and add a Gruntfile named  `Gruntfile.js` (or `Gruntfile.coffee` if you want to use CoffeeScript, or `grunt.js` if you are using Grunt 0.3) with a `heroku` task:
 
-    grunt.registerTask('heroku:development', 'clean less mincss');
+    grunt.registerTask('heroku', 'clean less mincss');
     
-or
-
-    grunt.registerTask('heroku:production', 'clean less mincss uglify');
-
 Don't forget to add grunt to your dependencies in `package.json`. If your grunt tasks depend on other pre-defined tasks make sure to add these dependencies as well:
 
     "dependencies": {
