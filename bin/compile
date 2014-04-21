@@ -184,7 +184,7 @@ mkdir -p $BUILD_DIR/.profile.d
 echo "export PATH=\"\$HOME/bin:\$HOME/node_modules/.bin:\$PATH\"" > $BUILD_DIR/.profile.d/nodejs.sh
 
 # Check and run gulp
-if [ -f $build_dir/gulpfile.js ]; then
+if [ -f $BUILD_DIR/gulpfile.js ]; then
   run_npm "install gulp"
   echo "-----> Found gulpfile, running grunt heroku:$NODE_ENV task"
   $build_dir/node_modules/.bin/gulp heroku
